@@ -1,0 +1,55 @@
+/*
+ * FONTS 
+================================================================================ */
+@font-face {
+    font-family: 'caxo';
+    
+    src: url('../src/assets/fonts/caxo.eot');
+    src: url('../src/assets/fonts/caxo.ttf') format("ttf"),
+    url('../src/assets/fonts/caxo.woff') format("woff"),
+    url('../src/assets/fonts/caxo.woff2') format("woff2");
+    
+    font-weight: 100 !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    
+}
+
+@font-face {
+    font-family: 'nalieta';
+    
+    src: url('../src/assets/fonts/nalieta.eot');
+    src: url('../src/assets/fonts/nalieta.ttf') format("ttf"),
+    url('../src/assets/fonts/nalieta.woff') format("woff"),
+    url('../src/assets/fonts/nalieta.woff2') format("woff2");
+    
+    font-weight: 100 !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    
+}
+
+#root {
+    background: linear-gradient(turquoise, rgb(75, 144, 255));
+  }
+
+#main-title{
+    font-family: caxo;
+    margin-top: 2%;
+    margin-left: 3.1%;
+    position: fixed;
+    letter-spacing: 15.5px;
+    color: white;
+}
+
+#secondary-title{
+    font-family: nalieta;
+    margin-top: 4%;
+    margin-left: 3%;
+    position: fixed;
+    letter-spacing: 4.8px;
+    color: white;
+    opacity: 0.7;
+}
