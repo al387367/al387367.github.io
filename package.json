@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage" : "https://al387367.github.io/index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

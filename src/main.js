@@ -227,11 +227,12 @@ document.getElementById("c").style.pointerEvents = 'none';
 	
 	$(window).on("navigate", function (event, data) {
 		var direction = data.state.direction;
+		/*
 		if (direction == 'back') {
 			if(currentScene != "intro"){
 				document.getElementById(currentScene).click();
 			}
-		}
+		}*/
 	});
 
 
