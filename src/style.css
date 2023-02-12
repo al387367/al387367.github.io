@@ -93,7 +93,7 @@ canvas {
 		width: 0.6vh;
 		height: 0.6vh;
 		z-index: 10000001;
-		background-color: #FFF;
+		background-color: #4b90ff;
 		-webkit-transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
 		transition: width .3s ease-in-out, height .3s ease-in-out, margin .3s ease-in-out, opacity .3s ease-in-out;
 	}
@@ -102,7 +102,7 @@ canvas {
 		margin-top: -4vh;
 		width: 8vh;
 		height: 8vh;
-		background-color: #FFF;
+		background-color: #4b90ff;
 		opacity: .3;
 	}
 	.cursor-outer {
@@ -110,7 +110,7 @@ canvas {
 		margin-top: -1.5vh;
 		width: 3vh;
 		height: 3vh;
-		border: 0.2vh solid #FFF;
+		border: 0.2vh solid #4b90ff;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 		z-index: 10000000;
@@ -215,7 +215,7 @@ canvas {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #000000;
+	background: #ffffff;
 	z-index: 800;
 	height: 100%;
 	width: 100%;
@@ -308,7 +308,7 @@ canvas {
     position: absolute;
     height: 50%;
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 	
     -webkit-transition: .7s all ease;
     -o-transition: .7s all ease;
