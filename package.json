@@ -3,10 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage" : "https://al387367.github.io/index.html",
+  "homepage": "https://al387367.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +18,7 @@
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.9.1",
     "@tabler/icons": "^1.115.0",
+    "babel-preset-react": "^6.24.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "three": "^0.146.0"
@@ -24,6 +27,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "gh-pages": "^5.0.0",
     "vite": "^3.2.3"
   }
 }
