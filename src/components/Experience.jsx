@@ -17,7 +17,7 @@ const Experience = () => {
 
   const screenshot = () => {
     const link = document.createElement("a");
-    link.setAttribute("download", "screenshot.png");
+    link.setAttribute("download", "My NINART Outfit.png");
     link.setAttribute(
       "href",
       gl.domElement

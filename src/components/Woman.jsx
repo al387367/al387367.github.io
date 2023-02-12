@@ -9,189 +9,91 @@ import { useCharacterCustomization } from "../contexts/CharacterCustomizationCon
 
 function Woman(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("./models/womanGLB.glb");
-  const { setAnimations, animationIndex } = useCharacterAnimations();
-  const { actions, names } = useAnimations(animations, group);
-  const {
-    morphTargetDictionary,
-    morphTargetInfluences,
-    setMorphTargetDictionary,
-    setMorphTargetInfluences,
-    hairColor,
-    setHairColor,
-    eyesColor,
-    setEyesColor,
-    glassesColor,
-    setGlassesColor,
-    skinColor,
-    setSkinColor,
-    mouthColor,
-    setMouthColor,
-    shirtColor,
-    setShirtColor,
-    pantsColor,
-    setPantsColor,
-    shoesColor,
-    setShoesColor,
-    soleColor,
-    setSoleColor,
-    lacesColor,
-    setLacesColor,
-  } = useCharacterCustomization();
-
-  useEffect(() => {
-    setAnimations(names);
-  }, [names]);
-
-  useEffect(() => {
-    actions[names[animationIndex]].reset().fadeIn(0.5).play();
-    return () => {
-      actions[names[animationIndex]].fadeOut(0.5);
-    };
-  }, [animationIndex]);
-
-  useEffect(() => {
-    setMorphTargetDictionary(Object.keys(nodes.Mesh019.morphTargetDictionary));
-    setMorphTargetInfluences(nodes.Mesh019.morphTargetInfluences);
-
-    setHairColor(`#${materials.Hair.color.getHexString()}`);
-    setEyesColor(`#${materials.Eyes.color.getHexString()}`);
-    setGlassesColor(`#${materials.Glasses.color.getHexString()}`);
-    setSkinColor(`#${materials.Skin.color.getHexString()}`);
-    setMouthColor(`#${materials.Mouth.color.getHexString()}`);
-    setShirtColor(`#${materials.Shirt.color.getHexString()}`);
-    setPantsColor(`#${materials.Pants.color.getHexString()}`);
-    setShoesColor(`#${materials.Shoes.color.getHexString()}`);
-    setLacesColor(`#${materials.Laces.color.getHexString()}`);
-    setSoleColor(`#${materials.Sole.color.getHexString()}`);
-  }, []);
-
+  const { nodes, materials, animations } = useGLTF("./models/samba-dancer.gltf");
+  const { actions } = useAnimations(animations, group);
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.11}>
           <primitive object={nodes.mixamorigHips} />
-          <group name="SM_Chr_Developer_Female_02">
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019"
-              geometry={nodes.Mesh019.geometry}
-              skeleton={nodes.Mesh019.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial
-                {...materials.Glasses}
-                color={glassesColor}
-              />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_1"
-              geometry={nodes.Mesh019_1.geometry}
-              skeleton={nodes.Mesh019_1.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Eyes} color={eyesColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_2"
-              geometry={nodes.Mesh019_2.geometry}
-              skeleton={nodes.Mesh019_2.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Hair} color={hairColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_3"
-              geometry={nodes.Mesh019_3.geometry}
-              skeleton={nodes.Mesh019_3.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Skin} color={skinColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_4"
-              geometry={nodes.Mesh019_4.geometry}
-              skeleton={nodes.Mesh019_4.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Mouth} color={mouthColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_5"
-              geometry={nodes.Mesh019_5.geometry}
-              skeleton={nodes.Mesh019_5.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Shirt} color={shirtColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_6"
-              geometry={nodes.Mesh019_6.geometry}
-              skeleton={nodes.Mesh019_6.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Pants} color={pantsColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_7"
-              geometry={nodes.Mesh019_7.geometry}
-              skeleton={nodes.Mesh019_7.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Shoes} color={shoesColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_8"
-              geometry={nodes.Mesh019_8.geometry}
-              skeleton={nodes.Mesh019_8.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Sole} color={soleColor} />
-            </skinnedMesh>
-            <skinnedMesh
-              frustumCulled={false}
-              castShadow
-              name="Mesh019_9"
-              geometry={nodes.Mesh019_9.geometry}
-              skeleton={nodes.Mesh019_9.skeleton}
-              morphTargetDictionary={nodes.Mesh019.morphTargetDictionary}
-              morphTargetInfluences={nodes.Mesh019.morphTargetInfluences}
-            >
-              <meshStandardMaterial {...materials.Laces} color={lacesColor} />
-            </skinnedMesh>
-          </group>
+          <skinnedMesh
+            name="Aros"
+            geometry={nodes.Aros.geometry}
+            material={nodes.Aros.material}
+            skeleton={nodes.Aros.skeleton}
+          />
+          <skinnedMesh
+            name="Cara"
+            geometry={nodes.Cara.geometry}
+            material={nodes.Cara.material}
+            skeleton={nodes.Cara.skeleton}
+          />
+          <skinnedMesh
+            name="Cara001"
+            geometry={nodes.Cara001.geometry}
+            material={nodes.Cara001.material}
+            skeleton={nodes.Cara001.skeleton}
+          />
+          <skinnedMesh
+            name="Coleta"
+            geometry={nodes.Coleta.geometry}
+            material={nodes.Coleta.material}
+            skeleton={nodes.Coleta.skeleton}
+          />
+          <skinnedMesh
+            name="Flequillo"
+            geometry={nodes.Flequillo.geometry}
+            material={nodes.Flequillo.material}
+            skeleton={nodes.Flequillo.skeleton}
+          />
+          <skinnedMesh
+            name="Nariz"
+            geometry={nodes.Nariz.geometry}
+            material={nodes.Nariz.material}
+            skeleton={nodes.Nariz.skeleton}
+          />
+          <skinnedMesh
+            name="Ombligo"
+            geometry={nodes.Ombligo.geometry}
+            material={nodes.Ombligo.material}
+            skeleton={nodes.Ombligo.skeleton}
+          />
+          <skinnedMesh
+            name="Pelo"
+            geometry={nodes.Pelo.geometry}
+            material={nodes.Pelo.material}
+            skeleton={nodes.Pelo.skeleton}
+          />
+          <skinnedMesh
+            name="Personaje"
+            geometry={nodes.Personaje.geometry}
+            material={nodes.Personaje.material}
+            skeleton={nodes.Personaje.skeleton}
+          />
+          <skinnedMesh
+            name="Piercing1"
+            geometry={nodes.Piercing1.geometry}
+            material={nodes.Piercing1.material}
+            skeleton={nodes.Piercing1.skeleton}
+          />
+          <skinnedMesh
+            name="Sphere"
+            geometry={nodes.Sphere.geometry}
+            material={nodes.Sphere.material}
+            skeleton={nodes.Sphere.skeleton}
+          />
+          <skinnedMesh
+            name="Sphere001"
+            geometry={nodes.Sphere001.geometry}
+            material={nodes.Sphere001.material}
+            skeleton={nodes.Sphere001.skeleton}
+          />
         </group>
       </group>
     </group>
   );
 }
 
-useGLTF.preload("./models/woman.gltf");
+useGLTF.preload("./models/samba-dancer.gltf");
 
 export default Woman;
