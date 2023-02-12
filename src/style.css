@@ -31,9 +31,25 @@
     
 }
 
-#root {
-    background: linear-gradient(turquoise, rgb(75, 144, 255));
+#root {/*
+	display: block;
+    position: fixed !important;
+	width: 100%;
+	height: 100%;
+	z-index: 101 !important;
+	pointer-events: all;*/
+	background: linear-gradient(turquoise, rgb(75, 144, 255));
   }
+
+canvas {
+	display: block;
+    position: fixed !important;
+	width: 100%;
+	height: 100%;
+	z-index: 102 !important;
+	pointer-events: all;
+  }
+
 
 #main-title{
     font-family: caxo;
@@ -144,28 +160,6 @@
 		height:100%;
 		float: left;
 		overflow: hidden;
-	}
-	.glitch{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background-image: url("..//img/slider/2.jpg");
-		background-size: cover;
-		-webkit-background-size: cover;
-		background-position: center;
-		z-index: -1 !important;
-		opacity: 1;
-		transform: scale(1);
-	}
-	.glitch:before{
-		content: "";
-		position: absolute;
-		top: 0px;
-		bottom: 0px;
-		left: 0px;
-		right: 0px;
 	}
 	
 	.waxon_tm_hero .video_demo{
@@ -286,7 +280,7 @@
 	bottom: 0;
 	height: 100% !important;
 	width: 100% !important;
-	background-color: rgb(26, 26, 26);
+	background: linear-gradient(turquoise, rgb(75, 144, 255));
 	z-index: 780;
 	  
 	-webkit-transition: .2s all ease;
