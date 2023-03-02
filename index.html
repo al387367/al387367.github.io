@@ -7,15 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <title>NINART</title>
-    <script type="module" crossorigin src="/assets/index.b6e5d3fa.js"></script>
-    <link rel="stylesheet" href="/assets/index.29da0770.css">
+    <script type="module" crossorigin src="/assets/index.48e6f446.js"></script>
+    <link rel="stylesheet" href="/assets/index.45351e7c.css">
   </head>
   <body id="myBody">
     <h1 id="main-title">NINART</h1>
     <h1 id="secondary-title">—Cris García—</h1>
     <h1 id="outfit-title">PICK AN OUTFIT</h1>
     <h1 id="outfit-description">To discover something about me</h1>
+
     <canvas id="c"></canvas>
+    <data>
+      <img id="myCVbutton" src="/assets/cv-logo.23673fdc.png" onmousedown=downloadCV() ontouchend="downloadCV()">
+    </data>
+    
+    <data>
+      <img id="myARTSTATIONbutton" src="/assets/artstation-logo.e97e781e.png" onmousedown=openArtstation() ontouchend="openArtstation()">
+    </data>
     <div id="root"></div>
     <!--
     <data>
@@ -55,7 +63,11 @@
       }
 
       function downloadCV(){
-        window.open("docs/NINART-CrisGarcia-CV.pdf");
+        window.open("src/assets/NINART-CrisGarcia-CV.pdf");
+      }
+
+      function openArtstation(){
+        window.open("https://ninartgarcia.artstation.com/");
       }
 
       function prevOutfit(){
