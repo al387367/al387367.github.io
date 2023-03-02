@@ -13,7 +13,15 @@
     <h1 id="secondary-title">—Cris García—</h1>
     <h1 id="outfit-title">PICK AN OUTFIT</h1>
     <h1 id="outfit-description">To discover something about me</h1>
+
     <canvas id="c"></canvas>
+    <data>
+      <img id="myCVbutton" src="/src/assets/cv-logo.png" onmousedown=downloadCV() ontouchend="downloadCV()">
+    </data>
+    
+    <data>
+      <img id="myARTSTATIONbutton" src="/src/assets/artstation-logo.png" onmousedown=openArtstation() ontouchend="openArtstation()">
+    </data>
     <div id="root"></div>
     <!--
     <data>
@@ -55,7 +63,11 @@
       }
 
       function downloadCV(){
-        window.open("docs/NINART-CrisGarcia-CV.pdf");
+        window.open("src/assets/NINART-CrisGarcia-CV.pdf");
+      }
+
+      function openArtstation(){
+        window.open("https://ninartgarcia.artstation.com/");
       }
 
       function prevOutfit(){

@@ -377,6 +377,44 @@ canvas {
 	user-select: none;           /* Non-prefixed version */
 }
 
+#myCVbutton{
+	display: block;
+	position: fixed !important;
+	min-width: 6vh !important;
+	max-width: 6vh !important;
+	min-height: 6vh !important;
+	max-height: 6vh !important;
+
+    margin-top: 3.7vh;
+    right: 15vh !important;
+	z-index: 401;
+}
+
+#myARTSTATIONbutton{
+	display: block;
+	position: fixed !important;
+	min-width: 6vh !important;
+	max-width: 6vh !important;
+	min-height: 6vh !important;
+	max-height: 6vh !important;
+
+    margin-top: 3.7vh;
+    right: 7vh !important;
+	z-index: 401;
+}
+
+@media only screen and (max-width: 992px) {
+	#myCVbutton{
+		margin-top: 10.7vh;
+		right: 4.5vh !important;
+	}
+
+	#myARTSTATIONbutton{
+		margin-top: 3.7vh;
+		right: 4.5vh !important;
+	}
+}
+
 #arrow-button {
 
 	z-index: 610;

@@ -6,7 +6,6 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
 import { useCharacterAnimations } from "../contexts/CharacterAnimations";
 import { useCharacterCustomization } from "../contexts/CharacterCustomizationContext";
-import './OutfitStyles.scss';
 import '/src/style.css';
 
 
@@ -89,7 +88,7 @@ function Woman(props) {
           morphTargetInfluences={nodes.Personaje_8.morphTargetInfluences}
         />
       </group>
-      <group position={[-1.41, 9.73, 2.15]} rotation={[1.69, 0.03, 0.3]}>
+      <group position={[-1.41, 9.73, 2.15]} rotation={[1.69, 0.03, 0.3]}scale={0.0015}>
         <mesh
         className="Woman"
           castShadow

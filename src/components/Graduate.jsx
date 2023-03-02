@@ -6,7 +6,6 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
 import { useCharacterAnimations } from "../contexts/CharacterAnimations";
 import { useCharacterCustomization } from "../contexts/CharacterCustomizationContext";
-import './OutfitStyles.scss';
 import '/src/style.css';
 
 function Graduate(props) {

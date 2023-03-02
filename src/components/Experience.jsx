@@ -9,7 +9,6 @@ import Graduate from "./Graduate";
 import Urban from "./Urban";
 import Beisbol from "./Beisbol";
 import Skirt from "./Skirt";
-import './OutfitStyles.scss';
 import { cameraMode } from "./Interface";
 import { CameraModes } from "../contexts/CharacterCustomizationContext";
 import { renderReactDom } from "/src/main.jsx";
