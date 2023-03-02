@@ -1,3 +1,8 @@
+import { OrbitControls } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import * as THREE from "three";
+
 /** 
  * ===================================================================
  * main js
@@ -29,8 +34,6 @@ document.getElementById("c").style.pointerEvents = 'none';
 
         // will fade out the whole DIV that covers the website.
         $("#preloader").delay(300).fadeOut("slow");
-
-		//screen.orientation.lock('landscape');
 
 		function waxon_tm_cursor(){
 
@@ -286,21 +289,6 @@ document.getElementById("c").style.pointerEvents = 'none';
 
 })(jQuery);
 
-function whiteMouse(){
-	document.getElementById("outer-mouse").style.border = "2px solid #FFF";
-	document.getElementById("inner-mouse").style.backgroundColor = "#FFF";
-}
-
-function blackMouse(){
-	document.getElementById("outer-mouse").style.border = "2px solid #000";
-	document.getElementById("inner-mouse").style.backgroundColor = "#000";
-}
-
-function downloadCV(){
-	window.open("docs/NINART-CrisGarcia-CV.pdf");
-}
-
-
 import { MantineProvider } from "@mantine/core";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -308,7 +296,9 @@ import App from "./App";
 import { CharacterAnimationsProvider } from "./contexts/CharacterAnimations";
 import { CharacterCustomizationProvider } from "./contexts/CharacterCustomizationContext";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const myReactDom = ReactDOM.createRoot(document.getElementById("root"));
+
+myReactDom.render(
   <React.StrictMode>
     <MantineProvider
       withGlobalStyles
@@ -326,11 +316,78 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         }),
       }}
     >
-      <CharacterCustomizationProvider>
+	<CharacterCustomizationProvider>
         <CharacterAnimationsProvider>
           <App />
         </CharacterAnimationsProvider>
-      </CharacterCustomizationProvider>
+	</CharacterCustomizationProvider>
     </MantineProvider>
   </React.StrictMode>
-);
+)
+
+export function renderReactDom(){
+	myReactDom.render(
+		<React.StrictMode>
+		  <MantineProvider
+			withGlobalStyles
+			withNormalizeCSS
+			theme={{
+			  globalStyles: (_theme) => ({
+				body: {
+				  width: "100vw",
+				  height: "100vh",
+				},
+				"#root": {
+				  width: "100%",
+				  height: "100%",
+				},
+			  }),
+			}}
+		  >
+		  <CharacterCustomizationProvider>
+			  <CharacterAnimationsProvider>
+				<App />
+			  </CharacterAnimationsProvider>
+		  </CharacterCustomizationProvider>
+		  </MantineProvider>
+		</React.StrictMode>
+	  )
+}
+
+export default renderReactDom;
+
+/*
+
+function testPrint(){
+	console.log("Printeando");
+}
+
+function ToGraduate(){
+	ReactDOM.destroy();
+	ReactDOM.createRoot(document.getElementById("root")).render(
+		<React.StrictMode>
+		  <MantineProvider
+			withGlobalStyles
+			withNormalizeCSS
+			theme={{
+			  globalStyles: (_theme) => ({
+				body: {
+				  width: "100vw",
+				  height: "100vh",
+				},
+				"#root": {
+				  width: "100%",
+				  height: "100%",
+				},
+			  }),
+			}}
+		  >
+			<CharacterCustomizationProvider>
+			  <CharacterAnimationsProvider>
+				<GraduateApp />
+			  </CharacterAnimationsProvider>
+			</CharacterCustomizationProvider>
+		  </MantineProvider>
+		</React.StrictMode>
+	);	
+}*/

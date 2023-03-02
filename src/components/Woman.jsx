@@ -6,94 +6,117 @@ import { useAnimations, useGLTF } from "@react-three/drei";
 import React, { useEffect, useRef } from "react";
 import { useCharacterAnimations } from "../contexts/CharacterAnimations";
 import { useCharacterCustomization } from "../contexts/CharacterCustomizationContext";
+import './OutfitStyles.scss';
+import '/src/style.css';
+
 
 function Woman(props) {
-  const group = useRef();
-  const { nodes, materials, animations } = useGLTF("./models/samba-dancer.gltf");
-  const { actions } = useAnimations(animations, group);
+  const group = useRef();  const { nodes, materials } = useGLTF("./models/nude.glb");
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
-        <group name="Armature" rotation={[Math.PI / 2, 0, 0]} scale={0.11}>
-          <primitive object={nodes.mixamorigHips} />
-          <skinnedMesh
-            name="Aros"
-            geometry={nodes.Aros.geometry}
-            material={nodes.Aros.material}
-            skeleton={nodes.Aros.skeleton}
-          />
-          <skinnedMesh
-            name="Cara"
-            geometry={nodes.Cara.geometry}
-            material={nodes.Cara.material}
-            skeleton={nodes.Cara.skeleton}
-          />
-          <skinnedMesh
-            name="Cara001"
-            geometry={nodes.Cara001.geometry}
-            material={nodes.Cara001.material}
-            skeleton={nodes.Cara001.skeleton}
-          />
-          <skinnedMesh
-            name="Coleta"
-            geometry={nodes.Coleta.geometry}
-            material={nodes.Coleta.material}
-            skeleton={nodes.Coleta.skeleton}
-          />
-          <skinnedMesh
-            name="Flequillo"
-            geometry={nodes.Flequillo.geometry}
-            material={nodes.Flequillo.material}
-            skeleton={nodes.Flequillo.skeleton}
-          />
-          <skinnedMesh
-            name="Nariz"
-            geometry={nodes.Nariz.geometry}
-            material={nodes.Nariz.material}
-            skeleton={nodes.Nariz.skeleton}
-          />
-          <skinnedMesh
-            name="Ombligo"
-            geometry={nodes.Ombligo.geometry}
-            material={nodes.Ombligo.material}
-            skeleton={nodes.Ombligo.skeleton}
-          />
-          <skinnedMesh
-            name="Pelo"
-            geometry={nodes.Pelo.geometry}
-            material={nodes.Pelo.material}
-            skeleton={nodes.Pelo.skeleton}
-          />
-          <skinnedMesh
-            name="Personaje"
-            geometry={nodes.Personaje.geometry}
-            material={nodes.Personaje.material}
-            skeleton={nodes.Personaje.skeleton}
-          />
-          <skinnedMesh
-            name="Piercing1"
-            geometry={nodes.Piercing1.geometry}
-            material={nodes.Piercing1.material}
-            skeleton={nodes.Piercing1.skeleton}
-          />
-          <skinnedMesh
-            name="Sphere"
-            geometry={nodes.Sphere.geometry}
-            material={nodes.Sphere.material}
-            skeleton={nodes.Sphere.skeleton}
-          />
-          <skinnedMesh
-            name="Sphere001"
-            geometry={nodes.Sphere001.geometry}
-            material={nodes.Sphere001.material}
-            skeleton={nodes.Sphere001.skeleton}
-          />
-        </group>
+    <group {...props} dispose={null}>
+      <group scale={0.0015}>
+        <primitive object={nodes.mixamorigHips} />
+        <skinnedMesh
+          name="Personaje_1"
+          style={"Woman"}
+          geometry={nodes.Personaje_1.geometry}
+          material={materials.Piel}
+          skeleton={nodes.Personaje_1.skeleton}
+          morphTargetDictionary={nodes.Personaje_1.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_1.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_2"
+          style={"Woman"}
+          geometry={nodes.Personaje_2.geometry}
+          material={materials.Piel2}
+          skeleton={nodes.Personaje_2.skeleton}
+          morphTargetDictionary={nodes.Personaje_2.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_2.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_3"
+          className="Woman"
+          geometry={nodes.Personaje_3.geometry}
+          material={materials.Joyas}
+          skeleton={nodes.Personaje_3.skeleton}
+          morphTargetDictionary={nodes.Personaje_3.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_3.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_4"
+          className="Woman"
+          geometry={nodes.Personaje_4.geometry}
+          material={materials.Cejas}
+          skeleton={nodes.Personaje_4.skeleton}
+          morphTargetDictionary={nodes.Personaje_4.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_4.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_5"
+          className="Woman"
+          geometry={nodes.Personaje_5.geometry}
+          material={materials.Dientes}
+          skeleton={nodes.Personaje_5.skeleton}
+          morphTargetDictionary={nodes.Personaje_5.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_5.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_6"
+          className="Woman"
+          geometry={nodes.Personaje_6.geometry}
+          material={materials.Pelo}
+          skeleton={nodes.Personaje_6.skeleton}
+          morphTargetDictionary={nodes.Personaje_6.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_6.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_7"
+          className="Woman"
+          geometry={nodes.Personaje_7.geometry}
+          material={materials.Pupila}
+          skeleton={nodes.Personaje_7.skeleton}
+          morphTargetDictionary={nodes.Personaje_7.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_7.morphTargetInfluences}
+        />
+        <skinnedMesh
+          name="Personaje_8"
+          className="Woman"
+          geometry={nodes.Personaje_8.geometry}
+          material={materials.Globo}
+          skeleton={nodes.Personaje_8.skeleton}
+          morphTargetDictionary={nodes.Personaje_8.morphTargetDictionary}
+          morphTargetInfluences={nodes.Personaje_8.morphTargetInfluences}
+        />
       </group>
+      <group position={[-1.41, 9.73, 2.15]} rotation={[1.69, 0.03, 0.3]}>
+        <mesh
+        className="Woman"
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane.geometry}
+          material={materials.Cristal}
+        />
+        <mesh
+        className="Woman"
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane_1.geometry}
+          material={materials.Joyas}
+        />
+      </group>
+      <mesh
+      className="Woman"
+        castShadow
+        receiveShadow
+        geometry={nodes.cloth_parent.geometry}
+        material={materials["Material.001"]}
+        scale={0.0015}
+      />
     </group>
   );
 }
 
-useGLTF.preload("./models/samba-dancer.gltf");
+useGLTF.preload("./models/nude.glb");
 
 export default Woman;

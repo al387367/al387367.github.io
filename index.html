@@ -2,20 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/src/assets/favicon.png">
+    <link rel="icon" type="image/png" href="/src/assets/ninart-face-min.png">
     <link rel="stylesheet" href="/src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <title>NINART</title>
   </head>
-  <body>
+  <body id="myBody">
     <h1 id="main-title">NINART</h1>
     <h1 id="secondary-title">—Cris García—</h1>
+    <h1 id="outfit-title">PICK AN OUTFIT</h1>
+    <h1 id="outfit-description">To discover something about me</h1>
     <canvas id="c"></canvas>
     <div id="root"></div>
+    <!--
+    <data>
+      <img src="src/assets/arrow-left.png" class="arrow-button" id="control-arrows-left" onmousedown="prevOutfit()" ontouchend="prevOutfit()">
+    </data>
 
-    <script type="module" src="/src/main.jsx"></script>
+    <data>
+      <img src="src/assets/arrow-right.png" class="arrow-button" id="control-arrows-right" onmousedown="nextOutfit()" ontouchend="nextOutfit()">
+    </data>
     
+    <script type="module" src="/node_modules/three/src/Three.js"></script>
+    <script type="module" src="/node_modules/@react-three/drei/index.js"></script>
+    <script type="module" src="/src/components/CameraControls.jsx"></script>    
+    -->
+
+    <script type="module" src="/src/main.jsx"></script>    
 
     	<!-- CURSOR -->
       <div id="outer-mouse" class="mouse-cursor cursor-outer"></div>
@@ -23,16 +37,84 @@
 
       <div id="preloader"> 
         <div id="loader">
-          <img src="favicon-yellow.png" class="faviconPreloader">
-          <img src="favicon-purple.png" class="faviconPreloader-min">
+          <img src="/src/assets/ninart-face-min.png" class="faviconPreloader">
         </div>
       </div> 
 
-      <script type="text/javascript">
+      <script type="module">
+        //import my_scene from "./src/components/CameraControls.js"
+      </script>    
+
+      <script>
+
+      var currentOutfit = 0;
 
       function whiteMouse(){
         document.getElementById("outer-mouse").style.border = "2px solid #FFF";
         document.getElementById("inner-mouse").style.backgroundColor = "#FFF";
+      }
+
+      function downloadCV(){
+        window.open("docs/NINART-CrisGarcia-CV.pdf");
+      }
+
+      function prevOutfit(){
+
+        if (currentOutfit == 0 || currentOutfit == 1) currentOutfit = 4;
+        else currentOutfit--;
+
+        if (currentOutfit == 1){
+          document.getElementById("outfit-title").textContent = "Game Design Graduate";
+          document.getElementById("outfit-description").textContent = "With advanced English level and intermediate Catalonian";
+        }
+        else if (currentOutfit == 2){
+          document.getElementById("outfit-title").textContent = "Painter and Tattoo Artist";
+          document.getElementById("outfit-description").textContent = "Who loves to design and experiment in her free time";
+        }
+        else if (currentOutfit == 3){
+          document.getElementById("outfit-title").textContent = "Cloth Artist and 3D Generalist";
+          document.getElementById("outfit-description").textContent = "Mainly working with Blender, Marvelous Designer, Substance Painter";
+        }
+        else if (currentOutfit == 4){
+          document.getElementById("outfit-title").textContent = "...and ready to work!";
+          document.getElementById("outfit-description").textContent = "Contact me at ninartgarcia@gmail.com";
+        }
+
+      }
+
+      //const scene = new THREE.ObjectLoader().parse( json );
+
+      function nextOutfit(){
+        
+        //my_scene.getObjectByName("NudeModel").visibility = false;
+        //console.log(document.querySelector('a-camera').name);
+
+        /*
+        main.scene.traverse(function(obj){
+          if (obj.name=="NudeModel") obj.visibility = false;
+        });*/
+
+        //document.getElementById("mainJSX").innerHTML = "ToGraduate()";
+
+        if (currentOutfit == 4) currentOutfit = 1;
+        else currentOutfit++;
+
+        if (currentOutfit == 1){
+          document.getElementById("outfit-title").textContent = "Game Design Graduate";
+          document.getElementById("outfit-description").textContent = "With advanced English level and intermediate Catalonian";
+        }
+        else if (currentOutfit == 2){
+          document.getElementById("outfit-title").textContent = "Painter and Tattoo Artist";
+          document.getElementById("outfit-description").textContent = "Who loves to design and experiment in her free time";
+        }
+        else if (currentOutfit == 3){
+          document.getElementById("outfit-title").textContent = "Cloth Artist and 3D Generalist";
+          document.getElementById("outfit-description").textContent = "Mainly working with Blender, Marvelous Designer, Substance Painter";
+        }
+        else if (currentOutfit == 4){
+          document.getElementById("outfit-title").textContent = "...and ready to work!";
+          document.getElementById("outfit-description").textContent = "Contact me at ninartgarcia@gmail.com";
+        }
       }
 
       function play_button_myload(){
@@ -230,8 +312,7 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
       </script>      
 
       <data>
-        <img id="play-button-icon" src="favicon-play-only.png" class="play-button-button" onmousedown="play_button_myload()" ontouchend="play_button_myload()">
-        <img id="play-button-empty" src="favicon-empty.png" class="play-button-empty" onmousedown="play_button_myload()" ontouchend="play_button_myload()">
+        <img id="play-button-icon" src="/src/assets/ninart-face-min.png" class="play-button-button" onmousedown="play_button_myload()" ontouchend="play_button_myload()">
       </data>  
 
     <div id="play-button"></div>

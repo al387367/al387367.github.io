@@ -1,12 +1,14 @@
 import { Canvas } from "@react-three/fiber";
+import * as THREE from "three";
 import Experience from "./components/Experience";
 import Interface from "./components/Interface";
 
-function App() {
+export function App() {
+
   return (
     <>
       <Canvas
-        camera={{ position: [1, 1.5, 2.5], fov: 50 }}
+        camera={{ position: [0, 1.7, 3.5], fov: 50 }}
         shadows
         gl={{ preserveDrawingBuffer: true }}
       >
@@ -15,6 +17,7 @@ function App() {
       <Interface />
     </>
   );
+
 }
 
 export default App;
